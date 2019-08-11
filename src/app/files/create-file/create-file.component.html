@@ -1,0 +1,14 @@
+<section class="wrapper">
+
+  <div class="inner">
+    <h2>Create File</h2>
+    <p>Enter the title of file in the below field</p>
+  </div>
+  <form #todo = "ngForm" (ngSubmit)="submit(todo.value)" >
+  <div class="content">
+      <h3>Enter File Name:</h3>
+      <input type="text" name="text" placeholder="Enter file name here..."ngModel/>
+      <input type="submit" (click)="submit($event)" value="Submit" />
+  </div>
+  </form>
+</section>

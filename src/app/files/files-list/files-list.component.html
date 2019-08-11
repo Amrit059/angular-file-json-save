@@ -1,0 +1,46 @@
+<section class="wrapper">
+
+  <div class="inner">
+    <h2>File List</h2>
+    <p>Shown file Data in the below Table</p>
+  </div>
+
+  <h2> Table</h2>
+
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <th>PROJECT AUTHOR NAME</th>
+          <th>PROJECT FILE CREATE TIME</th>
+          <th>PROJECT VERSION</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>{{fileModel.author}}</td>
+        <td>{{fileModel.time_stamp}}</td>
+        <td>{{fileModel.version}</td>
+      </tr>         
+    </table>
+  </div>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>TODO ID</th>
+            <th>TODO TEXT</th>
+            <th>UPDATE ACTION</th>
+            <th>DELETE ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let todo of fileModel.to_do_list">
+            <td>{{todo.id}}</td>
+        <td>{{todo.text}}</td>
+        <td><button mat-raised-button color="primary" (click)="updateToDoFromFile(todo.id)" >update</button></td>
+        <td><button  mat-raised-button color="primary" (click)="deleteToDoFromFile(todo.id)" >delete</button></td>
+      </tr>
+      <tbody>
+    </table>
+  </div>
+</section>
